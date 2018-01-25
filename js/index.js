@@ -1,8 +1,8 @@
 var soundButtons = document.querySelectorAll('.button')
 
 random = ['applause', 'ba-dum-tsss', 'burp', 'crowd-laughing', 'fart', 'money', 'sad-trombone']
-drums = ['bass', 'hi-hat', 'crash', 'snare', 'tom-1', 'tom-2']
-keys = ['f', 'g', 'o', 'i', 'u', 'l']
+drums = ['bass', 'hi-hat', 'snare', 'crash', 'tom-1', 'tom-2', 'floor-tom', 'elec-bass', 'hop-snare']
+keys = ['f', 'j', 'h', 'g', 'u', 'i', 'o', 'c', 'v'  ]
 
 setButtons(drums)
 
@@ -14,7 +14,9 @@ function setButtons(type){
       var soundButton = soundButtons[i];
 
       var header = document.createElement('h1')
+      var keyHelper = document.createElement('p')
       var title = document.createTextNode(type[i])
+      var keyHelperText = document.createTextNode(keys[i])
       var att = document.createAttribute("value")
       var id = document.createAttribute("id")
 
@@ -29,17 +31,16 @@ function setButtons(type){
       var soundName = soundButton.getAttribute("value")
       var appendNew = soundButton.appendChild(header).appendChild(title)
 
-      soundName != undefined ? prepareButton(soundButton, soundName, keys[i], color) : ''
+      soundName != undefined ? prepareButton(soundButton, soundName, keys[i], color, "drums") : ''
   }
 }
 
 
-function prepareButton(buttonEl, soundName, key, color){
-    // buttonEl.querySelector('.').style.backgroundImage = 'url("img/icons/' + soundName + '.png")';
+function prepareButton(buttonEl, soundName, key, color, type){
+    var audio = new Audio(__dirname + `/wav/${type}/` + soundName + '.wav');
 
-    var audio = new Audio(__dirname + '/wav/drums/' + soundName + '.wav');
     buttonEl.addEventListener('click', function () {
-        buttonEl.style.backgroundColor = "blue";
+        buttonEl.style.backgroundColor = "#e0dede";
         audio.currentTime = 0;
         audio.play();
         setTimeout(() => { buttonEl.style.backgroundColor = color }, 100)
@@ -51,7 +52,7 @@ function prepareButton(buttonEl, soundName, key, color){
 function createKeyPressEvent(setKey, audio, color, buttonEl){
   window.addEventListener("keydown", function (event) {
     if(event.key == setKey){
-      buttonEl.style.backgroundColor = "blue";
+      buttonEl.style.backgroundColor = "#e0dede";
       audio.currentTime = 0;
       audio.play();
       setTimeout(() => { buttonEl.style.backgroundColor = color }, 100)

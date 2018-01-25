@@ -1,6 +1,7 @@
 html,
 body {
     -webkit-app-region: drag;
+    font-family: 'Bungee Hairline', cursive;
 }
 
 h1 {
@@ -11,9 +12,14 @@ h1 {
   min-width: 150px;
   max-width: 150px;
   height: 150px;
-  border-radius: 25px;
+  /* border-radius: 25px; */
   margin: 5px 2.5px 5px;
   transition: all 0.2s ease-in-out
+}
+
+.button h1 {
+  font-size: 20px;
+  font-weight: bolder;
 }
 
 .row {
