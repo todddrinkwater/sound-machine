@@ -8,10 +8,12 @@ h1 {
 }
 
 .button {
-  width: 150px;
+  min-width: 150px;
+  max-width: 150px;
   height: 150px;
-  border: 1px solid black;
-  margin: auto;
+  border-radius: 25px;
+  margin: 5px 2.5px 5px;
+  transition: all 0.2s ease-in-out
 }
 
 .row {
