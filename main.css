@@ -1,0 +1,28 @@
+/* * {
+  border: 1px solid red;
+} */
+html,
+body {
+    -webkit-app-region: drag;
+}
+
+h1 {
+  text-align: center;
+}
+
+.button {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  margin: auto;
+  width: 45%;
+}
+
+.control {
+  margin:auto;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "sound-machine",
+  "version": "0.1.0",
+  "description": "Sound machine powered by Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/todddrinkwater/sound-machine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/todddrinkwater/sound-machine/issues"
+  },
+  "homepage": "https://github.com/todddrinkwater/sound-machine#readme",
+  "devDependencies": {
+    "electron": "^1.7.11"
+  }
+}
