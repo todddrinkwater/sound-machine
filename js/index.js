@@ -2,7 +2,7 @@ var soundButtons = document.querySelectorAll('.button')
 
 random = ['applause', 'ba-dum-tsss', 'burp', 'crowd-laughing', 'fart', 'money', 'sad-trombone']
 drums = ['bass', 'hi-hat', 'snare', 'crash', 'tom-1', 'tom-2', 'floor-tom', 'elec-bass', 'hop-snare']
-keys = ['f', 'j', 'h', 'g', 'u', 'i', 'o', 'c', 'v'  ]
+keys = ['f', 'j', 'h', 'g', 'u', 'i', 'o', 'c', 'v']
 
 setButtons(drums)
 
@@ -30,6 +30,7 @@ function setButtons(type){
 
       var soundName = soundButton.getAttribute("value")
       var appendNew = soundButton.appendChild(header).appendChild(title)
+      var appendPara = soundButton.appendChild(keyHelper).appendChild(keyHelperText)
 
       soundName != undefined ? prepareButton(soundButton, soundName, keys[i], color, "drums") : ''
   }
@@ -50,7 +51,7 @@ function prepareButton(buttonEl, soundName, key, color, type){
 }
 
 function createKeyPressEvent(setKey, audio, color, buttonEl){
-  window.addEventListener("keydown", function (event) {
+  window.addEventListener("keydown", function(event) {
     if(event.key == setKey){
       buttonEl.style.backgroundColor = "#e0dede";
       audio.currentTime = 0;

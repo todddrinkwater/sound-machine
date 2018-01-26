@@ -22,6 +22,11 @@ h1 {
   font-weight: bolder;
 }
 
+.button p {
+  text-align: center;
+  font-size: 24px;
+}
+
 .row {
   display: flex;
   margin: auto;
@@ -30,4 +35,9 @@ h1 {
 
 .control {
   margin:auto;
+}
+
+#footer-text {
+  font-size: 45px;
+  text-align: center;
 }
